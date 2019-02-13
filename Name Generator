@@ -1,0 +1,37 @@
+<html>
+
+<head>
+
+<script type= "text/javascript">
+
+var firstName = ['Fiora', 'Keth', 'Xanadu', 'Picket', 'Liab', 'Marion', 'Doc', 'Akon', 'Vanea', 'Inaea','Gypsi', 'Reyes', 'Reyn', 'Babel'];
+
+var lastName = ['Foxtrot', 'Strongjaw', 'Trickfoot', 'Antiqua', 'Lanister', 'Valora', 'Lemieux', 'Worthammer', 'Leaor', 'Indo', 'Gonzalez', 'Saiyah', 'Donali']
+
+
+
+function fantasyName() {
+
+var randomFirst = Math.floor(Math.random() * (firstName.length));
+var randomLast = Math.floor(Math.random() * (lastName.length));
+document.querySelector('#generatedName').innerHTML = firstName[randomFirst] + ' ' + lastName[randomLast];
+}
+
+</script>
+
+
+</head>
+
+<body bgcolor='#55f3c3'> 
+
+<h1> Fantasy Name Generator!</h1>
+
+<div id = 'generatedName'></div>
+
+<button onClick = 'fantasyName()'>Generate</button>
+
+</body>
+
+
+
+</html> 
