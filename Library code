@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>The Library</title>
+
+</head>
+
+<script type= "text/javascript">
+
+class LibraryItem{ 
+    constructor(itemTypes, title){
+        this.itemTypes = itemTypes;
+        this.title = title;
+    }
+
+}
+
+class Library
+{
+    constructor(){
+        this.items = [];
+    }
+
+    add(){
+
+        //get a pointer to the html form that
+        // has the id of LibraryForm
+        var frmItem = document.querySelector('#libraryForm');
+        // pass 5yat form pointer into the buildItem function
+        //and get back an object with the items properties
+        //extracted from the form
+        var item = this.buildItem(frmItem);
+        // add the item to the library of items
+        this.items.push(item);
+        console.table(this.items);
+        return false;
+
+    }
+
+    buildItem(frm){
+
+        var itemTypes = frm.querySelector('#selItemType').selectedOptions;
+        return new LibraryItem (itemTypes[0].value, frm.title.value); 
+    }
+
+
+    render(elementId){
+        var ul = document.querySelector('#libraryItems');
+
+        ul.innerHTML = null;
+
+        this .items.forEach(item => {
+            ul.appendChild(this.renderItem(item));
+        })
+
+    }
+
+    renderItem(item){
+
+
+    }
+   
+
+}
+
+var LMBLibrary = new Library();
+
+</script>
+<body>
+
+    <h1>Our Library</h1>
+    <form id="libraryForm">
+    <label for="selItemType"></label>
+    <select name="itemType" id= "selItemType">
+        <option value= "book">Book</option>
+        <option value= "movie">Movie</option>
+        <option value= "game">Game</option>
+    </select>
+    <label for="txtTitle">Title</label>
+    <input type= "text" name="title" id="txtTitle">
+
+    <input type="submit" name="btnAdd" value="Add"
+    onClick= "return LMBLibrary.add()">
+    </form>
+
+    <ul id="libraryItems"></ul>
+
+
+</body>
+
+</html>
