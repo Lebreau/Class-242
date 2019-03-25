@@ -1,0 +1,4 @@
+PLAYERS: Points, Banked Points
+RULES: Dice, Points, Bank, Role, Pass, Combine, Continue
+DICE: Sides, Value(number)
+SCORE: Farkle, Lost Points, Dice Values
