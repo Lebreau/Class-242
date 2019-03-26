@@ -1,4 +1,26 @@
-PLAYERS: Points, Banked Points, Hold
-RULES: Dice, Points, Bank, Role, Pass, Combine, Continue
-DICE: Sides, Value(number)
-SCORE: Farkle, Lost Points, Dice Values
+class Player{
+    constructor(player){
+        this.player = player
+}
+
+class Dice {
+constructor(sides){
+        this._sides = sides;
+    }
+
+class Score {
+     constructor(score)
+        this.score = score;
+        this.totalScore = 0;
+        this.currentTurnScore = 0;
+        this.Endscore = false;
+    }
+    
+    
+ class Rules {
+  constructor(rules){
+        this.rollSets = [];
+        this.rules = rules;
+        this.isFarkle = false;
+    
+ }
